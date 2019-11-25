@@ -1,0 +1,21 @@
+---
+version: '3'
+services:
+  apacheproxy:
+    env_file: .env
+    build:
+      context: ./apache
+      dockerfile: apacheproxy.Dockerfile
+    volumes:
+      - ./apache/sites:/usr/local/apache2/conf/sites/
+    ports:
+      - "80:80"
+  flaskapp:
+    env_file: .env
+    build:
+      context: ./flask-app
+      dockerfile: flask.Dockerfile
+    volumes:
+      - ./flask-app/app:/opt/libraries
+    ports:
+      - "8888:8888"
