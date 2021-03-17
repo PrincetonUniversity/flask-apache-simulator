@@ -1,4 +1,4 @@
-name: Pelican-Publisher
+name: Slack-Notifiations
 
 # Run this workflow ever time a new commit is pushed ot the repo
 on: push
